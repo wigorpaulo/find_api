@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   skip_before_action :authenticate_request!, only: [:create_token]
+  before_action :valid_params, only: [:create_token]
 
   # GET /users
   def index
@@ -9,16 +10,6 @@ class UsersController < ApplicationController
   end
 
   def create_token
-    unless params[:email].present?
-      return render json: { error: I18n.t('create_token.email_not_present') },
-                    status: :unauthorized
-    end
-
-    unless params[:password].present?
-      return render json: { error: I18n.t('create_token.password_not_present') },
-                    status: :unauthorized
-    end
-
     user = User.find_by(email: params[:email])
 
     unless user.present? && user.authenticate(params[:password])
@@ -34,5 +25,15 @@ class UsersController < ApplicationController
 
   def generate_token(user)
     JWT.encode({ user_id: user.id, exp: 120.seconds.from_now.to_i }, Rails.application.secret_key_base)
+  end
+
+  def valid_params
+    unless params[:email].present?
+      return render json: { error: I18n.t('create_token.email_not_present') }, status: :unauthorized
+    end
+
+    return if params[:password].present?
+
+    render json: { error: I18n.t('create_token.password_not_present') }, status: :unauthorized
   end
 end

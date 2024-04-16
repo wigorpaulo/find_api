@@ -8,7 +8,9 @@ class ApplicationController < ActionController::API
 
     if token.present?
       begin
-        return render json: { error: I18n.t('token.type_invalid') }, status: :unauthorized unless token.split.first == 'Bearer'
+        unless token.split.first == 'Bearer'
+          return render json: { error: I18n.t('token.type_invalid') }, status: :unauthorized
+        end
 
         decode_token = JWT.decode(token.split.last, Rails.application.secret_key_base)
         user_id = decode_token[0]['user_id']
