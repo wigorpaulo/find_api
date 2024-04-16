@@ -33,7 +33,7 @@
     "Rails.cep_api_two.executor": "Debug",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "action__create__token",
-    "last_opened_file_path": "/home/wigorpaulo/project_git/pessoal/find_api/cep_api_two",
+    "last_opened_file_path": "/home/wigorpaulo/project_git/pessoal/find_api/cep_api_two/config/locales",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -45,6 +45,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/config/locales" />
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
@@ -148,6 +149,7 @@
       <updated>1713269545656</updated>
       <workItem from="1713269546651" duration="526000" />
       <workItem from="1713270153916" duration="1255000" />
+      <workItem from="1713285630468" duration="4154000" />
     </task>
     <servers />
   </component>
@@ -155,6 +157,6 @@
     <option name="version" value="3" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/cep_api_two@cep_api_two.rcov" NAME="cep_api_two Coverage Results" MODIFIED="1713270934537" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="cep_api_two" />
+    <SUITE FILE_PATH="coverage/cep_api_two@cep_api_two.rcov" NAME="cep_api_two Coverage Results" MODIFIED="1713289227621" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="cep_api_two" />
   </component>
 </project>
