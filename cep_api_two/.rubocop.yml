@@ -40,3 +40,6 @@ RSpec/Rails/InferredSpecType:
 
 Style/GlobalVars:
   Enabled: false
+
+Metrics/AbcSize:
+  Enabled: false
