@@ -4,6 +4,7 @@ pt-BR:
     expired: 'O token expirou! Favor gerar novamente'
     invalid: 'O token é inválido'
     not_provided: 'O token não esta fornecido'
+    type_invalid: 'O tipo do token é inválido'
   create_token:
     invalid_email_or_password: 'E-mail ou senha esta inválido'
     email_not_present: 'E-mail esta em branco'

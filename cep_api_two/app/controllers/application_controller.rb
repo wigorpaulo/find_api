@@ -8,6 +8,8 @@ class ApplicationController < ActionController::API
 
     if token.present?
       begin
+        return render json: { error: I18n.t('token.type_invalid') }, status: :unauthorized unless token.split.first == 'Bearer'
+
         decode_token = JWT.decode(token.split.last, Rails.application.secret_key_base)
         user_id = decode_token[0]['user_id']
 
@@ -17,7 +19,7 @@ class ApplicationController < ActionController::API
         render json: { errors: [message] }, status: :unauthorized
       end
     else
-      render json: { errors: I18n.t('token.not_provided') }, status: :unauthorized
+      render json: { error: I18n.t('token.not_provided') }, status: :unauthorized
     end
   end
 

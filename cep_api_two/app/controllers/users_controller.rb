@@ -26,13 +26,13 @@ class UsersController < ApplicationController
                     status: :unauthorized
     end
 
-    render json: { token: generate_token(user) },
+    render json: { token: generate_token(user), expires_in: 120.seconds, token_type: 'Bearer' },
            status: :ok
   end
 
   private
 
   def generate_token(user)
-    JWT.encode({ user_id: user.id, exp: 30.seconds.from_now.to_i }, Rails.application.secret_key_base)
+    JWT.encode({ user_id: user.id, exp: 120.seconds.from_now.to_i }, Rails.application.secret_key_base)
   end
 end
