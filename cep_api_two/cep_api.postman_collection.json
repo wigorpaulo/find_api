@@ -1,0 +1,93 @@
+{
+	"info": {
+		"_postman_id": "75d9e564-555a-4fcc-854c-078e88609924",
+		"name": "cep_api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "1436049",
+		"_collection_link": "https://restless-comet-247836.postman.co/workspace/TJCE~04205584-2627-4707-bc7e-3bfc4ee1a582/collection/1436049-75d9e564-555a-4fcc-854c-078e88609924?action=share&source=collection_link&creator=1436049"
+	},
+	"item": [
+		{
+			"name": "CreateToken",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"admin@example.com\",\r\n    \"password\": \"password\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://0.0.0.0:3000/create_token",
+					"protocol": "http",
+					"host": [
+						"0",
+						"0",
+						"0",
+						"0"
+					],
+					"port": "3000",
+					"path": [
+						"create_token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ListUsers",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE3MTMyODg0OTd9.kZG88gmRKumNn5X5qaQYrHMesEbEviW6WvP5ELX_asg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://0.0.0.0:3000/users",
+					"protocol": "http",
+					"host": [
+						"0",
+						"0",
+						"0",
+						"0"
+					],
+					"port": "3000",
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "FindCep",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "ViaCep",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}

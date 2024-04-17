@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="81811bfa-2849-43f0-8981-c99991f1a212" name="Changes" comment="" />
+    <list default="true" id="81811bfa-2849-43f0-8981-c99991f1a212" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -57,7 +59,7 @@
     "RSpec.ZipCodesController.executor": "Debug",
     "Rails.cep_api_two.executor": "Debug",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "create__test__unit",
+    "git-widget-placeholder": "create__headme",
     "last_opened_file_path": "/home/wigorpaulo/project_git/pessoal/find_api/cep_api_two/config/locales",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -376,6 +378,7 @@
       <workItem from="1713285630468" duration="4154000" />
       <workItem from="1713302351790" duration="6178000" />
       <workItem from="1713352472576" duration="6880000" />
+      <workItem from="1713362195736" duration="1894000" />
     </task>
     <servers />
   </component>
