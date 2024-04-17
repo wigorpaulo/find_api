@@ -24,6 +24,11 @@ RSpec.describe '/users', type: :request do
       it 'response status unauthorized' do
         expect(response).to have_http_status(:unauthorized)
       end
+
+      it 'response message error' do
+        json_response = JSON.parse(response.body, symbolize_names: true)
+        expect(json_response[:error]).to match(/#{I18n.t('token.type_invalid')}/)
+      end
     end
 
     context 'with header Authorization is token nil' do
@@ -33,6 +38,11 @@ RSpec.describe '/users', type: :request do
 
       it 'response status unauthorized' do
         expect(response).to have_http_status(:unauthorized)
+      end
+
+      it 'response message error' do
+        json_response = JSON.parse(response.body, symbolize_names: true)
+        expect(json_response[:error]).to match(/#{I18n.t('token.not_provided')}/)
       end
     end
 
@@ -44,6 +54,11 @@ RSpec.describe '/users', type: :request do
 
       it 'response status unauthorized' do
         expect(response).to have_http_status(:unauthorized)
+      end
+
+      it 'response message error' do
+        json_response = JSON.parse(response.body, symbolize_names: true)
+        expect(json_response[:errors].first).to match(/#{I18n.t('token.expired')}/)
       end
     end
   end
@@ -69,6 +84,11 @@ RSpec.describe '/users', type: :request do
       it 'responses status unauthorized' do
         expect(response).to have_http_status(:unauthorized)
       end
+
+      it 'response message error' do
+        json_response = JSON.parse(response.body, symbolize_names: true)
+        expect(json_response[:error]).to match(/#{I18n.t('create_token.email_or_password_not_match')}/)
+      end
     end
 
     context 'with parameters email is nil' do
@@ -79,6 +99,11 @@ RSpec.describe '/users', type: :request do
       it 'responses status unauthorized' do
         expect(response).to have_http_status(:unauthorized)
       end
+
+      it 'response message error' do
+        json_response = JSON.parse(response.body, symbolize_names: true)
+        expect(json_response[:error]).to match(/#{I18n.t('create_token.email_not_present')}/)
+      end
     end
 
     context 'with parameters password is nil' do
@@ -88,6 +113,11 @@ RSpec.describe '/users', type: :request do
 
       it 'responses status unauthorized' do
         expect(response).to have_http_status(:unauthorized)
+      end
+
+      it 'response message error' do
+        json_response = JSON.parse(response.body, symbolize_names: true)
+        expect(json_response[:error]).to match(/#{I18n.t('create_token.password_not_present')}/)
       end
     end
   end

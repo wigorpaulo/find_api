@@ -28,6 +28,11 @@ RSpec.describe '/zip_codes', type: :request do
       it 'response status bad_request' do
         expect(response).to have_http_status(:bad_request)
       end
+
+      it 'response message error' do
+        json_response = JSON.parse(response.body, symbolize_names: true)
+        expect(json_response[:error]).to match(/#{I18n.t('action.zip_code_not_found', zip_code: zip_code.id)}/)
+      end
     end
 
     context 'with user authenticate and zip_code not exist base' do
@@ -48,6 +53,11 @@ RSpec.describe '/zip_codes', type: :request do
       it 'response status unauthorized' do
         expect(response).to have_http_status(:unauthorized)
       end
+
+      it 'response message error' do
+        json_response = JSON.parse(response.body, symbolize_names: true)
+        expect(json_response[:error]).to match(/#{I18n.t('token.type_invalid')}/)
+      end
     end
 
     context 'with header Authorization is token nil' do
@@ -57,6 +67,11 @@ RSpec.describe '/zip_codes', type: :request do
 
       it 'response status unauthorized' do
         expect(response).to have_http_status(:unauthorized)
+      end
+
+      it 'response message error' do
+        json_response = JSON.parse(response.body, symbolize_names: true)
+        expect(json_response[:error]).to match(/#{I18n.t('token.not_provided')}/)
       end
     end
 
@@ -68,6 +83,11 @@ RSpec.describe '/zip_codes', type: :request do
 
       it 'response status unauthorized' do
         expect(response).to have_http_status(:unauthorized)
+      end
+
+      it 'response message error' do
+        json_response = JSON.parse(response.body, symbolize_names: true)
+        expect(json_response[:errors].first).to match(/#{I18n.t('token.expired')}/)
       end
     end
   end
