@@ -1,10 +1,11 @@
 FactoryBot.define do
   factory :zip_code do
     id { 1 }
-    address { 'MyString' }
-    neighborhood { 'MyString' }
-    city { 'MyString' }
-    state { 'MyString' }
-    complement { 'MyString' }
+    zip_code { '74463500' }
+    address { 'rua 18' }
+    neighborhood { 'Central' }
+    city { 'Goiania' }
+    state { 'GO' }
+    complement { 'Proximo ao supermecado' }
   end
 end
